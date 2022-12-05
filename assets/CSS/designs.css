@@ -1,0 +1,62 @@
+main .container {
+  padding-top: var(--padding-top-100);
+  padding-bottom: var(--padding-bottom-100);
+}
+.card {
+  position: relative;
+  border-radius: 5px;
+  transition: var(--transition-3);
+}
+.card::before {
+  content: "";
+  position: absolute;
+  font-size: 100px;
+  color: var(--dark-clr);
+  top: -70px;
+  left: -25px;
+  z-index: -1;
+  transition: var(--transition-3);
+}
+.card:first-of-type::before {
+  content: "1";
+}
+.card:nth-of-type(2)::before {
+  content: "2";
+}
+.card:nth-of-type(3)::before {
+  content: "3";
+}
+.card:last-of-type::before {
+  content: "4";
+}
+.card:hover {
+  transform: translateY(-15px);
+}
+.card:hover::before {
+  left: 0;
+}
+.card img {
+  width: 100%;
+  border-radius: inherit;
+}
+.card a {
+  position: absolute;
+  width: 100%;
+  height: 99%;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  background-color: rgba(238, 238, 238, 0.603);
+  border-radius: inherit;
+  opacity: 0;
+  transition: var(--transition-3);
+}
+.card a p {
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--dark-clr);
+}
+.card:hover a {
+  opacity: 1;
+}
